@@ -7,7 +7,7 @@ body{
 
 
 .mathBox {
-    margin-top: 110px;
+    /* margin-top: 20px; */
     /* background: #96d7eb; */
     padding: 25px;
 }
@@ -24,4 +24,32 @@ body{
     background-color: #002c2b;
     color: white;
     text-align: center;
+}
+
+.answerDiv1{
+    border: 3px solid teal;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.answerDiv{
+    padding: 15px;    
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 20px auto;
+}
+#startBtn{
+    outline: none;
+    border: 3px solid #002c2b;
+    color: #002c2b;
+    font-weight: 800;
+    padding: 10px 30px;
+    margin: auto;
+    transition: all 0.3s;
+}
+
+#startBtn:hover{
+    background-color: orange;
 }
