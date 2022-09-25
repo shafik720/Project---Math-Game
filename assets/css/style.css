@@ -12,14 +12,16 @@ body{
     padding: 25px;
 }
 .showBoard{
-    width: 70%;
+    width: 60%;
     margin: 20px auto;
     height: 180px;
     background-color: #abe4ff;
+    border: 3px solid #51425f;
+    border-radius: 5px;
 }
 
 .dummyBoard{
-    width: 70%;
+    width: 60%;
     margin: 20px auto;
     background-color: #002c2b;
     color: white;
@@ -31,13 +33,14 @@ body{
     width: 100px;
     height: 100px;
     cursor: pointer;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.5);
 }
 
 .answerDiv{
     padding: 15px;    
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 60%;
     margin: 20px auto;
 }
 #startBtn{
