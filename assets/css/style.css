@@ -12,7 +12,7 @@ body{
     padding: 25px;
 }
 .showBoard{
-    width: 70%;
+    /* width: 70%; */
     margin: 20px auto;
     height: 180px;
     background-color: #abe4ff;
@@ -21,7 +21,7 @@ body{
 }
 
 .dummyBoard{
-    width: 70%;
+    /* width: 70%; */
     margin: 20px auto;
     background-color: #002c2b;
     color: white;
@@ -40,7 +40,7 @@ body{
     padding: 15px;    
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    /* width: 70%; */
     margin: 20px auto;
 }
 #startBtn{
@@ -55,4 +55,22 @@ body{
 
 #startBtn:hover{
     background-color: orange;
+}
+
+.stopWatch{
+    border: 5px solid brown;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;    
+}
+
+.sideline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
