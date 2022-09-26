@@ -21,6 +21,12 @@ h1, h2, h3, h4,h5, h6{
     border: 3px solid #51425f;
     border-radius: 5px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#showGameNumber h1{
+    font-size: 6em;
 }
 .scoreDiv{
     border: 2px solid #51425f;
@@ -52,6 +58,9 @@ h1, h2, h3, h4,h5, h6{
     height: 100px;
     cursor: pointer;
     box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .answerDiv{
