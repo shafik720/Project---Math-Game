@@ -12,7 +12,7 @@ let showSecondNumber = document.getElementById('secondNumber');
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    stopWatch(10);
+    // stopWatch(10);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();
@@ -28,6 +28,8 @@ let calculation = () => {
     let boxArray = [anserDiv1,anserDiv2,anserDiv3,anserDiv4];    
     let lotteryForBoxes =  random(0,3);
     boxArray[lotteryForBoxes].innerText = result;
+    let rightAnswerDiv = (boxArray[lotteryForBoxes].id);
+    return rightAnswerDiv;
 }
 
 
@@ -96,3 +98,9 @@ function random(min, max){
     return x;
 }
 
+
+anserDiv1.addEventListener('click',function(){
+    let rightAnswerDivId = calculation();
+    let currentDivId = anserDiv1.id;
+    console.log(rightAnswerDivId, currentDivId);
+})
