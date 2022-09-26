@@ -12,7 +12,7 @@ let showSecondNumber = document.getElementById('secondNumber');
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    // stopWatch(10);
+    stopWatch(10);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();
@@ -23,13 +23,13 @@ document.getElementById('startBtn').addEventListener('click',function(){
 
 
 let calculation = () => {
+    showGameNumber.style.display = 'block';
     let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
     let boxArray = [anserDiv1,anserDiv2,anserDiv3,anserDiv4];    
     let lotteryForBoxes =  random(0,3);
     boxArray[lotteryForBoxes].innerHTML = `
     <h3>${result}</h3>
-    `
-    console.log(lotteryForBoxes);
+    `;
 }
 
 
