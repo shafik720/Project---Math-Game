@@ -29,7 +29,6 @@ let calculation = () => {
     let lotteryForBoxes =  random(0,3);
     boxArray[lotteryForBoxes].innerText = result;
     let rightAnswerDiv = (boxArray[lotteryForBoxes].id);
-    return rightAnswerDiv;
 }
 
 
@@ -99,8 +98,12 @@ function random(min, max){
 }
 
 
-anserDiv1.addEventListener('click',function(){
-    let rightAnswerDivId = calculation();
-    let currentDivId = anserDiv1.id;
-    console.log(rightAnswerDivId, currentDivId);
-})
+function answerDivFunction () {
+    let clickedDiv = parseInt(event.target.innerText);
+    let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
+    if(clickedDiv===result){
+        console.log('Right answer');
+    }else{
+        console.log('Wrong answer');
+    }
+}
