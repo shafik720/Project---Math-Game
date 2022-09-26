@@ -10,11 +10,14 @@ let showFirstNumber = document.getElementById('firstNumber');
 let showSecondNumber = document.getElementById('secondNumber');
 let scoreSpan = document.getElementById('scoreSpan');
 let score = parseInt(scoreSpan.innerText);
+let gameOverDivs = document.getElementById('gameOverDiv');
+let gameOverScore = document.getElementById('gameOverScore');
+
 
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    stopWatch(10);
+    stopWatch(5);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();
@@ -51,7 +54,10 @@ const stopWatch = (startingPoint) => {
         }
         if(counter===-1){
             clearInterval(x);
+            showGameOver();
+            console.log("finished");
         }
+        
     },1000)
 }
 
@@ -107,15 +113,26 @@ function answerDivFunction () {
     if(clickedDiv===result){
         score = score + 5;
         scoreSpan.innerText = score;
+        gameOverScore.innerText = score;
     }else{
         if(score>0 && score-2 >= 0){                    
             score = score -2;
-            scoreSpan.innerText = score;       
+            scoreSpan.innerText = score;
+            gameOverScore.innerText = score;       
         }
     }
     if(anserDiv1.innerText){
         randomizeInBoxes();
         randomNumberInMainBox();
         calculation();
+    }
+}
+
+function showGameOver(){
+    gameOverDivs.style.display = 'flex';
+    let answerDiv = document.getElementsByClassName('answerDiv1');
+    for(let answerdiv of answerDiv){
+        answerdiv.style.display = 'none';
+        console.log(answerdiv);
     }
 }
