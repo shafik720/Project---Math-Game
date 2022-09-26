@@ -23,7 +23,7 @@ h1, h2, h3, h4,h5, h6{
     position: relative;
 }
 .scoreDiv{
-    border: 2px solid teal;
+    border: 2px solid #51425f;
     width: 100px;
     height: 45px;
     display: flex;
@@ -75,7 +75,7 @@ h1, h2, h3, h4,h5, h6{
 }
 
 .stopWatch{
-    border: 5px solid brown;
+    border: 5px solid #0C89EE;
     width: 120px;
     height: 120px;
     border-radius: 50%;
