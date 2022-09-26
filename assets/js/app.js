@@ -1,5 +1,5 @@
 let stopWatchNumber = document.getElementById('stopWatchNumber');
-
+let stopWatchDiv = document.getElementById('stopWatchDiv');
 
 
 document.getElementById('startBtn').addEventListener('click',function(){
@@ -15,6 +15,7 @@ document.getElementById('startBtn').addEventListener('click',function(){
 
 
 const stopWatch = (startingPoint) => {
+    stopWatchDiv.style.display = 'flex';
     stopWatchNumber.innerText = startingPoint;
     stopWatchNumber.style.fontWeight = '700'
     stopWatchNumber.style.fontSize = '3em'
