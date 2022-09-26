@@ -24,7 +24,7 @@ document.getElementById('startBtn').addEventListener('click',function(){
 
 
 
-
+// function for showing stopwatch in the side panel
 const stopWatch = (startingPoint) => {
     stopWatchDiv.style.display = 'flex';
     stopWatchNumber.innerText = startingPoint;
@@ -43,6 +43,7 @@ const stopWatch = (startingPoint) => {
     },1000)
 }
 
+// function for showing in the 4 boxes under the main box
 const randomizeInBoxes = () => {
     let randomNumberArray = [];
     let boxArray = [anserDiv1,anserDiv2,anserDiv3,anserDiv4];
@@ -58,8 +59,9 @@ const randomizeInBoxes = () => {
     console.log (boxArray);
 }
 
-const randomNumberInMainBox = () => {
-    
+
+// function for showing in the main box
+const randomNumberInMainBox = () => {    
     function forFirstNumber(){
         let x = Math.ceil(Math.random()*10);
         if(x===0 || x===1 || x>10){
