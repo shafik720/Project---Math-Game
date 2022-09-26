@@ -15,6 +15,7 @@ document.getElementById('startBtn').addEventListener('click',function(){
     // stopWatch(10);
     randomizeInBoxes();
     randomNumberInMainBox();
+    calculation();
 })
 
 
@@ -55,8 +56,6 @@ const randomizeInBoxes = () => {
             <h3>${randomNumberArray[i]}</h3>
         `;
     }
-    
-    console.log (boxArray);
 }
 
 
@@ -78,4 +77,10 @@ const randomNumberInMainBox = () => {
     }
     forFirstNumber();
     forSecondNumber();
+}
+
+
+let calculation = () => {
+    let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
+    console.log(result);
 }
