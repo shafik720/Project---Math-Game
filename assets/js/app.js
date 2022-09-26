@@ -8,6 +8,8 @@ let anserDiv4 = document.getElementById('anserDiv4');
 let showGameNumber = document.getElementById('showGameNumber');
 let showFirstNumber = document.getElementById('firstNumber');
 let showSecondNumber = document.getElementById('secondNumber');
+let scoreSpan = document.getElementById('scoreSpan');
+let score = parseInt(scoreSpan.innerText);
 
 
 // Making the Start button functional
@@ -102,8 +104,17 @@ function answerDivFunction () {
     let clickedDiv = parseInt(event.target.innerText);
     let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
     if(clickedDiv===result){
-        console.log('Right answer');
+        score = score + 5;
+        scoreSpan.innerText = score;
     }else{
-        console.log('Wrong answer');
+        if(score>0 && score-2 >= 0){                    
+            score = score -2;
+            scoreSpan.innerText = score;       
+        }
+    }
+    if(anserDiv1.innerText){
+        randomizeInBoxes();
+        randomNumberInMainBox();
+        calculation();
     }
 }
