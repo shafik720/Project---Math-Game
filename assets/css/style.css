@@ -12,7 +12,7 @@ body{
     padding: 25px;
 }
 .showBoard{
-    width: 60%;
+    width: 70%;
     margin: 20px auto;
     height: 180px;
     background-color: #abe4ff;
@@ -21,7 +21,7 @@ body{
 }
 
 .dummyBoard{
-    width: 60%;
+    width: 70%;
     margin: 20px auto;
     background-color: #002c2b;
     color: white;
@@ -40,7 +40,7 @@ body{
     padding: 15px;    
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 70%;
     margin: 20px auto;
 }
 #startBtn{
