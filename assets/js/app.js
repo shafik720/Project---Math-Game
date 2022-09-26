@@ -22,6 +22,15 @@ document.getElementById('startBtn').addEventListener('click',function(){
 
 
 
+let calculation = () => {
+    let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
+    let boxArray = [anserDiv1,anserDiv2,anserDiv3,anserDiv4];    
+    let lotteryForBoxes =  random(0,3);
+    boxArray[lotteryForBoxes].innerHTML = `
+    <h3>${result}</h3>
+    `
+    console.log(lotteryForBoxes);
+}
 
 
 
@@ -46,6 +55,7 @@ const stopWatch = (startingPoint) => {
 
 // function for showing in the 4 boxes under the main box
 const randomizeInBoxes = () => {
+    // let resultFromCalculation = calculation();
     let randomNumberArray = [];
     let boxArray = [anserDiv1,anserDiv2,anserDiv3,anserDiv4];
     for(let i=0;i<4;i++){        
@@ -80,7 +90,10 @@ const randomNumberInMainBox = () => {
 }
 
 
-let calculation = () => {
-    let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
-    console.log(result);
+
+
+// function for random number under given min and max
+function random(min, max){
+    let x = Math.floor(Math.random() * (max-min+1)+min) ;
+    return x;
 }
