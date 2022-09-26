@@ -14,10 +14,11 @@ let score = parseInt(scoreSpan.innerText);
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    // stopWatch(10);
+    stopWatch(10);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();
+    document.getElementById('startBtn').setAttribute('disabled', true);
 })
 
 
