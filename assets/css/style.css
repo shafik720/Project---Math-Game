@@ -4,7 +4,9 @@
 body{
     font-family: 'Nunito', sans-serif ;
 }
-
+h1, h2, h3, h4,h5, h6{
+    margin-bottom: 0px;
+}
 
 .mathBox {
     /* margin-top: 20px; */
@@ -18,6 +20,21 @@ body{
     background-color: #abe4ff;
     border: 3px solid #51425f;
     border-radius: 5px;
+    position: relative;
+}
+.scoreDiv{
+    border: 2px solid teal;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #ffbc11;
+    color: black;
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
 
 .dummyBoard{
@@ -78,3 +95,4 @@ body{
 #stopWatchDiv{
     display: none;
 }
+
