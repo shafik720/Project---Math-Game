@@ -24,6 +24,7 @@ document.getElementById('startBtn').addEventListener('click',function(){
     calculation();
     document.getElementById('startBtn').setAttribute('disabled', true);
     resetBtn.style.display = 'block';
+    gameOverScore.innerText = score
 })
 
 // Making the reset button functional
@@ -115,6 +116,7 @@ function random(min, max){
 function answerDivFunction () {
     let clickedDiv = parseInt(event.target.innerText);
     let result = parseInt(showFirstNumber.innerText) * parseInt(showSecondNumber.innerText);
+    
     if(clickedDiv===result){
         score = score + 5;
         scoreSpan.innerText = score;
