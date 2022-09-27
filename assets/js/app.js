@@ -17,7 +17,7 @@ let gameOverScore = document.getElementById('gameOverScore');
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    stopWatch(5);
+    stopWatch(15);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();

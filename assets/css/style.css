@@ -13,7 +13,6 @@ h1, h2, h3, h4,h5, h6{
     position: relative;
 }
 .showBoard{
-    /* width: 70%; */
     margin: 20px auto;
     height: 180px;
     background-color: #abe4ff;
@@ -132,5 +131,32 @@ h1, h2, h3, h4,h5, h6{
 }
 #gameOverScore{
     color: white;
+}
+
+
+
+
+
+/*--------------------------------------------------------------------------
+For mobile:  
+---------------------------------------------------------------------------*/
+@media only screen and (max-width:480px){
+    .answerDiv1{
+        border: 3px solid teal;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+    }
+    #showGameNumber h1{
+        font-size: 3em;
+    }
+    #stopWatchMainDiv{
+        justify-content: center;
+    }
 }
 
