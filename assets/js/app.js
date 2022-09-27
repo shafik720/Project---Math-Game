@@ -1,3 +1,5 @@
+
+
 // getting all document values
 let stopWatchNumber = document.getElementById('stopWatchNumber');
 let stopWatchDiv = document.getElementById('stopWatchDiv');
@@ -15,7 +17,8 @@ let gameOverScore = document.getElementById('gameOverScore');
 let resetBtn = document.getElementById('resetBtn');
 let tryAgain = document.getElementById('tryAgain');
 let highScoreDiv = document.getElementById('highScore');
-let highScore =  parseInt(highScoreDiv.innerText + 0);
+
+
 
 
 
@@ -67,7 +70,6 @@ const stopWatch = (startingPoint) => {
         if(counter===-1){
             clearInterval(x);
             showGameOver();
-            console.log("finished");
         }
         
     },1000)
@@ -112,14 +114,61 @@ function random(min, max){
     return x;
 }
 
-function highScores(){
+/* --------------------------------
+working on high score
+------------------------------------ */
+
+let getScore = () => {
+    let score = localStorage.getItem('score');
+    let scoreObj;
+    if(score){
+        scoreObj = JSON.parse(score);
+    }else{
+        scoreObj = {};
+    }
+    return scoreObj;
+}
+let addToLocalStorage = (model) =>{
+    let x = getScore();
+    if(x['highscore']){
+        x['highScore'] = model;
+    }else{
+        x['highScore'] = model;
+    }    
+    let stringifiedX  = JSON.stringify(x);
+    localStorage.setItem('score', stringifiedX);
+}
+let showHighScoreFromLocalStorage = () => {
+    let x = getScore();
+    console.log(x['highScore']);
+    console.log(x['highScore']==undefined);
     
+    if(x['highScore']==undefined){
+        highScoreDiv.innerText = 0;
+    }
+    else if(x['highscore'] != 0){
+        highScoreDiv.innerText = x['highScore'];    
+    }else if(!x['highScore']===true){
+        console.log('setting to zero')
+        highScoreDiv.innerText = 0;
+    }
+    else{
+        highScoreDiv.innerText = 0;
+    }
+    
+}
+showHighScoreFromLocalStorage();
+
+console.log(getScore());
+
+function highScores(){    
+    let highScore =  parseInt(highScoreDiv.innerText);
     if(score>highScore){
         highScore = score;
         highScoreDiv.innerText = highScore;
+        addToLocalStorage(highScore);
     }
 }
-console.log(highScore);
 
 function answerDivFunction () {
     let clickedDiv = parseInt(event.target.innerText);
@@ -150,6 +199,14 @@ function showGameOver(){
     let answerDiv = document.getElementsByClassName('answerDiv1');
     for(let answerdiv of answerDiv){
         answerdiv.style.display = 'none';
-        console.log(answerdiv);
     }
 }
+
+
+// Working for Local Storage for storing high score
+
+
+
+
+
+
