@@ -13,12 +13,13 @@ let score = parseInt(scoreSpan.innerText);
 let gameOverDivs = document.getElementById('gameOverDiv');
 let gameOverScore = document.getElementById('gameOverScore');
 let resetBtn = document.getElementById('resetBtn');
+let tryAgain = document.getElementById('tryAgain');
 
 
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    stopWatch(15);
+    stopWatch(5);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();
@@ -27,8 +28,11 @@ document.getElementById('startBtn').addEventListener('click',function(){
     gameOverScore.innerText = score
 })
 
-// Making the reset button functional
+// Making the reset button and try again button functional
 resetBtn.addEventListener('click', function(){
+    location.reload();
+})
+tryAgain.addEventListener('click', function(){
     location.reload();
 })
 
