@@ -166,6 +166,7 @@ function highScores(){
     if(score>highScore){
         highScore = score;
         highScoreDiv.innerText = highScore;
+        highScoreDiv.style.color = '#007ACC';
         addToLocalStorage(highScore);
     }
 }
