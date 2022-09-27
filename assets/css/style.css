@@ -11,6 +11,9 @@ h1, h2, h3, h4,h5, h6{
 .mathBox {    
     padding: 25px;
     position: relative;
+    margin-top: 30px;
+    border-radius: 5px;
+    background: #028f76;
 }
 .showBoard{
     margin: 20px auto;
@@ -63,6 +66,7 @@ h1, h2, h3, h4,h5, h6{
     justify-content: center;
     align-items: center;
     font-size: 2em;
+    background-color: white;
 }
 
 .answerDiv{
@@ -133,6 +137,22 @@ h1, h2, h3, h4,h5, h6{
     color: white;
 }
 
+#gameBtn{
+    position: relative;
+}
+#resetBtn{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    outline: none;
+    background: linear-gradient(45deg, #d31900, #ff6600);
+    color: white;
+    border: none;
+    padding: 5px;
+    display: none;
+}
+
+
 
 
 
@@ -157,6 +177,18 @@ For mobile:
     }
     #stopWatchMainDiv{
         justify-content: center;
+    }
+    #resetBtn{
+        position: relative;
+        right:0;
+        left: 100px;
+        top: 20px;
+        outline: none;
+        background: linear-gradient(45deg, #d31900, #ff6600);
+        color: white;
+        border: none;
+        padding: 5px;
+        display: none;
     }
 }
 

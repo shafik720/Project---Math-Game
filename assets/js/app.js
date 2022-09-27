@@ -12,6 +12,7 @@ let scoreSpan = document.getElementById('scoreSpan');
 let score = parseInt(scoreSpan.innerText);
 let gameOverDivs = document.getElementById('gameOverDiv');
 let gameOverScore = document.getElementById('gameOverScore');
+let resetBtn = document.getElementById('resetBtn');
 
 
 
@@ -22,9 +23,13 @@ document.getElementById('startBtn').addEventListener('click',function(){
     randomNumberInMainBox();
     calculation();
     document.getElementById('startBtn').setAttribute('disabled', true);
+    resetBtn.style.display = 'block';
 })
 
-
+// Making the reset button functional
+resetBtn.addEventListener('click', function(){
+    location.reload();
+})
 
 
 
