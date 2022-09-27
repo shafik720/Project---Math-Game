@@ -114,9 +114,9 @@ function random(min, max){
     return x;
 }
 
-/* --------------------------------
-working on high score
------------------------------------- */
+
+
+// Working for Local Storage for storing high score
 
 let getScore = () => {
     let score = localStorage.getItem('score');
@@ -161,6 +161,9 @@ showHighScoreFromLocalStorage();
 
 console.log(getScore());
 
+/* --------------------------------
+working on high score
+------------------------------------ */
 function highScores(){    
     let highScore =  parseInt(highScoreDiv.innerText);
     if(score>highScore){
@@ -204,7 +207,6 @@ function showGameOver(){
 }
 
 
-// Working for Local Storage for storing high score
 
 
 
