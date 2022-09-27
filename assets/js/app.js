@@ -14,18 +14,21 @@ let gameOverDivs = document.getElementById('gameOverDiv');
 let gameOverScore = document.getElementById('gameOverScore');
 let resetBtn = document.getElementById('resetBtn');
 let tryAgain = document.getElementById('tryAgain');
+let highScoreDiv = document.getElementById('highScore');
+let highScore =  parseInt(highScoreDiv.innerText + 0);
 
 
 
 // Making the Start button functional
 document.getElementById('startBtn').addEventListener('click',function(){
-    stopWatch(5);
+    stopWatch(30);
     randomizeInBoxes();
     randomNumberInMainBox();
     calculation();
     document.getElementById('startBtn').setAttribute('disabled', true);
     resetBtn.style.display = 'block';
-    gameOverScore.innerText = score
+    gameOverScore.innerText = score;
+    
 })
 
 // Making the reset button and try again button functional
@@ -44,7 +47,6 @@ let calculation = () => {
     let boxArray = [anserDiv1,anserDiv2,anserDiv3,anserDiv4];    
     let lotteryForBoxes =  random(0,3);
     boxArray[lotteryForBoxes].innerText = result;
-    let rightAnswerDiv = (boxArray[lotteryForBoxes].id);
 }
 
 
@@ -104,18 +106,20 @@ const randomNumberInMainBox = () => {
     forSecondNumber();
 }
 
-//function for Score settlement
-
-
-
-
-
 // function for random number under given min and max
 function random(min, max){
     let x = Math.floor(Math.random() * (max-min+1)+min) ;
     return x;
 }
 
+function highScores(){
+    
+    if(score>highScore){
+        highScore = score;
+        highScoreDiv.innerText = highScore;
+    }
+}
+console.log(highScore);
 
 function answerDivFunction () {
     let clickedDiv = parseInt(event.target.innerText);
@@ -125,11 +129,13 @@ function answerDivFunction () {
         score = score + 5;
         scoreSpan.innerText = score;
         gameOverScore.innerText = score;
+        highScores();
     }else{
         if(score>0 && score-2 >= 0){                    
             score = score -2;
             scoreSpan.innerText = score;
-            gameOverScore.innerText = score;       
+            gameOverScore.innerText = score;   
+            highScores();
         }
     }
     if(anserDiv1.innerText){
