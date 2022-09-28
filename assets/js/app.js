@@ -141,8 +141,6 @@ let addToLocalStorage = (model) =>{
 }
 let showHighScoreFromLocalStorage = () => {
     let x = getScore();
-    console.log(x['highScore']);
-    console.log(x['highScore']==undefined);
     
     if(x['highScore']==undefined){
         highScoreDiv.innerText = 0;
@@ -150,7 +148,6 @@ let showHighScoreFromLocalStorage = () => {
     else if(x['highscore'] != 0){
         highScoreDiv.innerText = x['highScore'];    
     }else if(!x['highScore']===true){
-        console.log('setting to zero')
         highScoreDiv.innerText = 0;
     }
     else{
@@ -160,7 +157,7 @@ let showHighScoreFromLocalStorage = () => {
 }
 showHighScoreFromLocalStorage();
 
-console.log(getScore());
+
 
 /* --------------------------------
 working on high score
@@ -184,7 +181,9 @@ function answerDivFunction () {
         scoreSpan.innerText = score;
         gameOverScore.innerText = score;
         highScores();
-    }else{
+        answerSignal('green');
+    }else{        
+        answerSignal('red');
         if(score>0 && score-2 >= 0){                    
             score = score -2;
             scoreSpan.innerText = score;
@@ -213,8 +212,13 @@ clearHighScore.addEventListener('click', function(){
     location.reload();
 })
 
-
-
-
-
-
+// making righ answer, wrong answer noticable
+const answerSignal = (color) => {
+    let targetId = event.target.id;
+    let targetDiv = document.getElementById(targetId);
+    targetDiv.style.backgroundColor = color;
+    let x = setTimeout(()=>{
+        targetDiv.style.backgroundColor = 'white';
+        console.log('got it');
+    },200)
+}
