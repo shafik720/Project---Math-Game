@@ -17,6 +17,7 @@ let gameOverScore = document.getElementById('gameOverScore');
 let resetBtn = document.getElementById('resetBtn');
 let tryAgain = document.getElementById('tryAgain');
 let highScoreDiv = document.getElementById('highScore');
+let clearHighScore = document.getElementById('clearHighScore');
 
 
 
@@ -206,7 +207,11 @@ function showGameOver(){
     }
 }
 
-
+// clearing high score
+clearHighScore.addEventListener('click', function(){
+    localStorage.removeItem('score');
+    location.reload();
+})
 
 
 

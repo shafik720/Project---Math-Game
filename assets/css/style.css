@@ -167,6 +167,15 @@ h1, h2, h3, h4,h5, h6{
     color: #51425f;
 }
 
+#clearHighScore{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    background: #d31900;
+    color: white;
+}
+
 
 
 
