@@ -120,7 +120,7 @@ function random(min, max){
 // Working for Local Storage for storing high score
 
 let getScore = () => {
-    let score = localStorage.getItem('score');
+    let score = localStorage.getItem('scores');
     let scoreObj;
     if(score){
         scoreObj = JSON.parse(score);
@@ -137,7 +137,7 @@ let addToLocalStorage = (model) =>{
         x['highScore'] = model;
     }    
     let stringifiedX  = JSON.stringify(x);
-    localStorage.setItem('score', stringifiedX);
+    localStorage.setItem('scores', stringifiedX);
 }
 let showHighScoreFromLocalStorage = () => {
     let x = getScore();
